@@ -1,0 +1,113 @@
+﻿@page "/Technical_Skills"
+@model MyResume.Pages.TSModel
+@{
+
+}
+@*<link rel="stylesheet" type="text/css" href="css/aboutme.css" />*@
+@*<link rel="stylesheet" type="text/css" href="css/demo.css" />*@ @*This CSS is effecting background of Technical sill page be careful*@
+<link rel="stylesheet" type="text/css" href="css/style3.css" />
+<link rel="stylesheet" type="text/css" href="css/StyleSheet.css" />
+<link rel="stylesheet" type="text/css" href="~/css/Tech_Name.css" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300,300italic' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+<script type="text/javascript" src="js/jquery.swatchbook.js"></script>
+<script src="https://kit.fontawesome.com/34fec2a7b5.js" crossorigin="anonymous"></script>
+
+
+
+<div>
+
+    <section class="main">
+
+        <div id="sb-container" class="sb-container">
+
+            <div>
+                <i class="fas fa-project-diagram fa-4x" style="padding-top:30px; color:black;"></i>
+                <h4><span>Project Management</span></h4>
+            </div>
+            <div>
+                <span class="fas fa-broadcast-tower fa-4x" style="padding-top:30px; color:yellow;"></span>
+                <h4><span>Telecom Transmission</span></h4>
+            </div>
+            <div>
+                <span class="fas fa-laptop-code fa-4x" style="padding-top:30px; color:Black;"></span>
+                <h4><span>Software Development</span></h4>
+            </div>
+            <div>
+                <i class="fas fa-database fa-4x" style="padding-top:30px; color:red;"></i>
+                <h4><span>SQL Server</span></h4>
+            </div>
+            <div>
+                <i class="fas fa-database fa-4x" style="padding-top:30px; color:red;"></i>
+                <h4><span>Oracle Database</span></h4>
+            </div>
+            <div>
+                <i class="fas fa-cloud fa-4x" style="padding-top:30px; color:blueviolet;"></i>
+                <h4><span>Cloud Computing</span></h4>
+            </div>
+            <div>
+                <i class="fas fa-tools fa-4x" style="padding-top:30px; color:red;"></i>
+                <h4><span>Splunk</span></h4>
+            </div>
+            <div>
+                <i class="fas fa-server fa-4x" style="padding-top:30px; color:yellow;"></i>
+                <h4><span>Linux & Windows Server</span></h4>
+            </div>
+            <div>
+                <i class="fas fa-network-wired fa-4x" style="padding-top:30px; color:yellow;"></i>
+                <h4><span>NMS Server</span></h4>
+            </div>
+            <div>
+                <i class="far fa-dot-circle fa-4x" style="padding-top:30px; color:yellow;"></i>
+                <h4><span>SAP (MM Module)</span></h4>
+            </div>
+            <div>
+                <i class="fas fa-chalkboard-teacher fa-4x" style="padding-top:30px; color:yellow;"></i>
+                <h4><span>Reports</span></h4>
+            </div>
+            <div>
+                <h4><span>Profile</span></h4>
+                <span class="sb-toggle" style="color:white;">Click to open/close</span>
+                <h5> <b><span style="color:white; font-size:37PX; text-align:center;">My &#9788; Skills</span></b></h5>
+            </div>
+
+
+        </div><!-- sb-container -->
+
+    </section>
+</div>
+
+@*<div class="Bhanu">*@
+<!--<div class="bird-container bird-container--one">
+    <div class="bird bird--one"></div>
+</div>
+
+<div class="bird-container bird-container--two">
+    <div class="bird bird--two"></div>
+</div>
+
+<div class="bird-container bird-container--three">
+    <div class="bird bird--three"></div>
+</div>
+
+<div class="bird-container bird-container--four">
+    <div class="bird bird--four"></div>
+</div>-->
+
+
+<script type="text/javascript">
+    $(function () {
+
+        $('#sb-container').swatchbook({
+            // number of degrees that is between each item
+            angleInc: 15,
+            neighbor: 15,
+            // if it should be closed by default
+            initclosed: true,
+            // index of the element that when clicked, triggers the open/close function
+            // by default there is no such element
+            closeIdx: 11
+        });
+
+    });
+</script>

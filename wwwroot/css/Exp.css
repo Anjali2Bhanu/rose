@@ -1,0 +1,39 @@
+﻿.accordion {
+    position: center;
+    color: white;
+    border-radius: 50px;
+    background-color: #000050;
+    cursor: pointer;
+    padding: 10px 10px;
+    width: 90%;
+    border: ridge;
+    text-align: left;
+    outline: none;
+    transition: 0.4s ease-out;
+}
+
+    .active1, .accordion:hover {
+        background: linear-gradient(to top left, #33ccff 0%, #ff99cc 100%);
+        border: groove;
+        color: black;
+        outline: none;
+        font-style: italic;
+        font-size: 20px;
+    }
+/**/
+.panel {
+    font-size: 13px;
+    text-align: justify;
+    padding: 0 18px;
+    color: white;
+    width: 90%;
+    border-radius: 50px;
+    background-color: #004e92;
+    max-height: 0;
+    overflow: hidden;
+    /*   transition: max-height 0.3s ease-out;*/
+}
+
+ol {
+    margin: 10px
+}

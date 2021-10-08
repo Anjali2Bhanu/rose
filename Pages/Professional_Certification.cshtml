@@ -1,0 +1,88 @@
+﻿@page "/Professional_Certification"
+@model MyResume.Pages.Professional_CertificationModel
+@{
+}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.7/typed.min.js"></script>
+ 
+<br />
+<div style="background-color:white;color:green;width:800px; height:400px; border-radius:50px; position:center; border:solid; border-color:black" class="wrapper">
+   
+    <div style="padding-left:20px; padding-top:10px;">
+         
+        Linux [Version 10.0.19042.928] <br />
+        (c) Linux Corporation. (Linux Name just used for the purpose show the candidate skills,) <br />
+        All rights reserverd to Linux
+
+    </div>
+
+    <b>
+    
+    <p style="padding-left:20px; padding-top:20px;" id="terminal"></p>
+    
+    </b>
+  
+
+</div>
+
+
+
+<script>
+
+    var cons = document.getElementById("terminal");
+    var text = "$Telnet Certificate-Server\n $Login:Bhanu\n $Password:\n $Show Certificate\n $PRINCE2® Foundation Certification Training (Credential ID GR656203292BS\n $ITIL® Foundation Certificate in IT Service Management (Credential ID GR671270159BS\n  $Leadership & Strategy in VUCA enviroment from IIT Delhi 2017\n $Microsoft Certified Cloud Architect 2020\n $Splunk 7.x Fundamentals Part-1";
+ 
+    var lineArr = text.split("\n");
+    var TextArrs = [];
+    var toggle = true;
+    var isEnd = false;
+    var isSpassPressed = false;
+    for (var i = 0; i < lineArr.length; i++) {
+        TextArrs.push(lineArr[i]);
+    }
+    var i = 0, j = 0;
+    document.addEventListener('keydown', function (event) {
+        if (event.which === 32) {
+            isSpassPressed = true;
+        }
+    });
+    function addChar() {
+        if (isSpassPressed) {
+            i = 0;
+            j = 0;
+            isEnd = false;
+            cons.innerHTML = "";
+            isSpassPressed = false;
+        }
+        if (isEnd) {
+            var cursor = document.getElementById("cursor");
+            cursor.style.display = 'none';
+            if (toggle) {
+                cursor.style.display = '';
+            } else {
+                cursor.style.display = 'none';
+            }
+            toggle = !toggle;
+        }
+        if (TextArrs[i][j]) {
+            if (j === 0) {
+                cons.innerHTML += ">" + TextArrs[i][j++];
+            } else {
+                cons.innerHTML += TextArrs[i][j++];
+            }
+        } else if (TextArrs[i++]) {
+            cons.innerHTML += "<br />";
+            j = 0;
+            if (i >= TextArrs.length) {
+                /*i = 0;*/ //to reset each time and start again automatically make i = 0 here
+                cons.innerHTML = cons.innerHTML.toString().substr(0, cons.innerHTML.toString().length - 4) + "<span id=\"cursor\">|</span>";
+                isEnd = true;
+            }
+        }
+    }
+    setInterval(addChar, 100);
+
+
+</script>
+
+

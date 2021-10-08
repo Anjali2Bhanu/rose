@@ -1,0 +1,30 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/Certi.css",
+    "inputFile": "wwwroot/css/Certi.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/mgmt.css",
+    "inputFile": "wwwroot/css/mgmt.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Layout.css",
+    "inputFile": "wwwroot/css/Layout.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/StyleSheet.css",
+    "inputFile": "wwwroot/css/StyleSheet.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Tech_Name.css",
+    "inputFile": "wwwroot/css/Tech_Name.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/Intro.css",
+    "inputFile": "wwwroot/css/Intro.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/h.css",
+    "inputFile": "wwwroot/css/h.scss"
+  }
+]

@@ -1,0 +1,192 @@
+﻿@page "/aboutme"
+@model MyResume.Pages.aboutmeModel
+@{
+}
+
+<link rel="stylesheet" type="text/css" href="~/css/aboutme.css" />
+<br />
+<br />
+
+<div class="wrapper">
+    <div style="color:white; text-align:center; font-size:28px; margin-top:-4px;">My Introduction</div>
+    <br/>
+
+    <div id="text"></div>
+    <div class="buttons">
+        <button id="play">Listen in Audio</button>
+        <button id="pause" disabled>Pause</button>
+        <button id="stop" disabled>Stop</button>
+    </div>
+</div>
+
+<style>
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    /*body {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+        color: #fff;
+        background-image: linear-gradient(-45deg, #f4d03f, #16a085);
+        font: 1.25rem/1 'Poppins', sans-serif;
+    }*/
+    .wrapper {
+        width: 100%;
+        max-width: calc(100vw - 40px);
+        padding: 30px;
+        border-color: white;
+        border: solid;
+        border-radius: 50px;
+        background-color: #000050;
+    }
+        /* background: radial-gradient( circle farthest-corner at 10% 20%, rgba(226,37,37,1) 0%, rgba(211,49,49,1) 82.8% );*/
+    
+
+    #text {
+        font-style: italic;
+        display: block;
+        color: white;
+        line-height: 1.75;
+        text-align: justify;
+    }
+
+    mark {
+        color: #000;
+        background-color: #f4d03f;
+    }
+
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        gap: 10px;
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 1px solid #fff3;
+    }
+
+    button {
+        padding: 5px;
+        border: 1px solid #fff;
+        border-radius: 999px;
+        color: #fff;
+        background-color: #0009;
+        font-size: inherit;
+        font-family: inherit;
+        cursor: pointer;
+        appearance: none;
+    }
+
+        button:disabled {
+            opacity: 0.25;
+            cursor: not-allowed;
+        }
+</style>
+
+<script>
+    const text = '  Hello, I am Bhanu Pratap Singh, born in 1986, I have completed my schooling from Hindi Medium and then did my software engineering from NIIT- Gurgaon in the year of 2011, After that I did my Masters in Computer Application in the Year of 2014, also I hold certification from IIT- Delhi, am a Microsoft certified cloud architect. I have 9 Year of experience in Telecom and IT Industry, Managed large and complex project in India and overseas. My skills are SQL Server, .Net, Splunk, Linux Server, Cloud Computing(Microsoft Azure), Agile Methodology, Transmission Technology(SDH, PDH, WDM, DWDM), SCADA, RTU 101 and RTU 104 Protocol. I have 9 Year of experience in Telecom and IT Industry, Managed large and complex project in India and overseas. I am Suitable for the following Roles Project Manager / Program Manager / Service Delivery Manager / Solution Manager / IT Operations.  In my leisure time, I love to play chess, listening Kishor Kumar, reading historical books especially mid of 20th Century’s. I am enthusiastic person who is convinced that “Always be Student”. I can speak little bit German Language and improving it more. I am blessed with two kids and lived happily';
+
+
+
+    // grab the UI elements to work with
+    const textEl = document.getElementById('text');
+    const playEl = document.getElementById('play');
+    const pauseEl = document.getElementById('pause');
+    const stopEl = document.getElementById('stop');
+
+    // add UI event handlers
+    playEl.addEventListener('click', play);
+    pauseEl.addEventListener('click', pause);
+    stopEl.addEventListener('click', stop);
+
+    // set text
+    textEl.innerHTML = text;
+
+    function play() {
+        if (window.speechSynthesis.speaking) {
+            // there's an unfinished utterance
+            window.speechSynthesis.resume();
+        } else {
+            // start new utterance
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.addEventListener('start', handleStart);
+            utterance.addEventListener('pause', handlePause);
+            utterance.addEventListener('resume', handleResume);
+            utterance.addEventListener('end', handleEnd);
+            utterance.addEventListener('boundary', handleBoundary);
+            window.speechSynthesis.speak(utterance);
+        }
+    }
+
+    function pause() {
+        window.speechSynthesis.pause();
+    }
+
+    function stop() {
+        window.speechSynthesis.cancel();
+
+        // Safari doesn't fire the 'end' event when cancelling, so call handler manually
+        handleEnd();
+    }
+
+    function handleStart() {
+        playEl.disabled = true;
+        pauseEl.disabled = false;
+        stopEl.disabled = false;
+    }
+
+    function handlePause() {
+        playEl.disabled = false;
+        pauseEl.disabled = true;
+        stopEl.disabled = false;
+    }
+
+    function handleResume() {
+        playEl.disabled = true;
+        pauseEl.disabled = false;
+        stopEl.disabled = false;
+    }
+
+    function handleEnd() {
+        playEl.disabled = false;
+        pauseEl.disabled = true;
+        stopEl.disabled = true;
+
+        // reset text to remove mark
+        textEl.innerHTML = text;
+    }
+
+    function handleBoundary(event) {
+        if (event.name === 'sentence') {
+            // we only care about word boundaries
+            return;
+        }
+
+        const wordStart = event.charIndex;
+
+        let wordLength = event.charLength;
+        if (wordLength === undefined) {
+            // Safari doesn't provide charLength, so fall back to a regex to find the current word and its length (probably misses some edge cases, but good enough for this demo)
+            const match = text.substring(wordStart).match(/^[a-z\d']*/i);
+            wordLength = match[0].length;
+        }
+
+        // wrap word in <mark> tag
+        const wordEnd = wordStart + wordLength;
+        const word = text.substring(wordStart, wordEnd);
+        const markedText = text.substring(0, wordStart) + '<mark>' + word + '</mark>' + text.substring(wordEnd);
+        textEl.innerHTML = markedText;
+    }
+
+
+
+
+</script>
+
+
+

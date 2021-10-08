@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Bhanu Professional Detials</title>
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">*@
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" type="text/css" href="css/Layout.css" />
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+
+</head>
+<body>
+    <header class="header colored sticky-header" data-scroll="out">
+        <div class="c-container">
+            <div class="nav-items">
+
+                <ul class="main-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link active" href="Index"><i class="fas fa-tachometer-alt">&nbsp;</i>Home</a>
+                    </li>
+
+
+                        <li class="nav-item">
+          
+                        <a class="nav-link" href="aboutme"><i class="fas fa-male">&nbsp;</i>About Me</a>
+                            </li>
+             
+                    <li class="nav-item">
+                        <a class="nav-link" href="Professional_Experience"><i class="fas fa-briefcase">&nbsp;</i>Experience</a>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Educational_Details">&nbsp;<i class="fas fa-user-graduate">&nbsp;</i>Education</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="Professional_Certification"><i class="fas fa-book-open">&nbsp;</i>Certification(s)</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Technical_Skills"><i class="fas fa-tools">&nbsp;</i>Technical Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mgmt"><i class="fas fa-handshake">&nbsp;</i>Management Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Hobbies"><i class="fas fa-chess-knight">&nbsp;</i>Hobbies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Gallary"><i class="fas  fa-video">&nbsp;</i>Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contact_Us"><i class="fas fa-mobile-alt">&nbsp;</i>Contact Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item" role="button" href="/Resume/Resume.pdf" download="Bhanu_Resume">Resume</a>
+                    </li>
+
+                </ul>
+
+</div>
+        </div>
+    </header>
+
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+
+
+
+    </div>
+
+
+
+
+    <footer class="border-top footer text-muted">
+        <div class="footer" ; style="text-align:center;">
+            &copy; 2021 - All Rights Reserved 
+            
+            <div style="float:right"> Best Viewed in Google Chrome & in 1920 X 1080 Resolution </div>
+
+
+
+        </div>
+    </footer>
+
+</body>
+</html>
